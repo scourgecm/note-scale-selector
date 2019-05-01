@@ -1,0 +1,67 @@
+<div class="container">
+    <p class="h1-responsive">note scale selector</p>
+    <form>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <label>Root Note</label>
+                <select
+                    class="browser-default custom-select mb-4"
+                    name="note"
+                    [(ngModel)]="noteSet.note"
+                >
+                    <option *ngFor="let note of notes" [ngValue]="note">{{
+                        note
+                    }}</option>
+                </select>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <label>Accident</label>
+                <select
+                    class="browser-default custom-select mb-4"
+                    name="accident"
+                    [(ngModel)]="noteSet.accident"
+                >
+                    <option
+                        *ngFor="let accident of accidents"
+                        [ngValue]="accident"
+                        >{{ accident }}</option
+                    >
+                </select>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <label>Scale</label>
+                <select
+                    class="browser-default custom-select mb-4"
+                    name="scale"
+                    [(ngModel)]="noteSet.scale"
+                >
+                    <option *ngFor="let scale of scales" [ngValue]="scale">{{
+                        scale
+                    }}</option>
+                </select>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <label>Chords</label>
+                <select
+                    class="browser-default custom-select mb-4"
+                    name="chord"
+                    [(ngModel)]="noteSet.chord"
+                >
+                    <option *ngFor="let chord of chords" [ngValue]="chord">{{
+                        chord
+                    }}</option>
+                </select>
+            </div>
+        </div>
+        <button
+            mdbBtn
+            type="button"
+            color="default"
+            block="true"
+            mdbWavesEffect
+            (click)="randomize()"
+        >
+            randomize
+        </button>
+    </form>
+</div>
