@@ -7,16 +7,18 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NoteBuilderComponent } from './note-builder/note-builder.component';
 import { NoteSelectorService } from './services/note-selector.service';
 import { FormsModule } from '@angular/forms';
+import { NoteKeeperService } from './note-keeper.service';
+import { NoteListComponent } from './note-list/note-list.component';
 
 @NgModule({
-    declarations: [AppComponent, NoteBuilderComponent],
+    declarations: [AppComponent, NoteBuilderComponent, NoteListComponent],
     imports: [
         BrowserModule,
         FormsModule,
         AppRoutingModule,
         MDBBootstrapModule.forRoot()
     ],
-    providers: [NoteSelectorService],
+    providers: [NoteSelectorService, NoteKeeperService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

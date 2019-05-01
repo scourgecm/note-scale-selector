@@ -14,12 +14,6 @@ import {
 export class NoteSelectorService {
     constructor() {}
 
-    public savedSets: INoteSet[] = [];
-
-    public saveSet(noteSet: INoteSet): void {
-        this.savedSets.push(noteSet);
-    }
-
     public getRandomSet(): INoteSet {
         return {
             note: this.getRandomElement(NOTES),
