@@ -1,20 +1,14 @@
+import { IAccident } from './note-accident.model';
+
 export interface INoteSet {
     note: string;
-    accident: string;
-    scale: string;
-    chord: string;
-}
-
-export class NoteSet implements INoteSet {
-    note: string;
-    accident: string;
-    scale: string;
+    accident: IAccident;
+    mode: string;
     chord: string;
 }
 
 export const NOTES: string[] = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
-export const ACCIDENTS: string[] = ['#', 'natural', 'b'];
-export const SCALES: string[] = ['maj', 'min'];
+export const MODES: string[] = ['Ionian', 'Dorian', 'Phrygian', 'Lydian', 'Mixolydian', 'Aeolian', 'Locrian'];
 export const CHORDS: string[] = [
     'maj',
     'min',
@@ -28,5 +22,5 @@ export const CHORDS: string[] = [
     'o',
     'o7',
     'min7b5',
-    '+'
+    '+',
 ];

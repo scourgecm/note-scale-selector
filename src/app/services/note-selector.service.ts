@@ -1,15 +1,9 @@
 import { Injectable } from '@angular/core';
-import {
-    INoteSet,
-    NoteSet,
-    NOTES,
-    ACCIDENTS,
-    SCALES,
-    CHORDS
-} from '../model/note-set.model';
+import { INoteSet, NOTES, CHORDS, MODES } from '../model/note-set.model';
+import { ACCIDENTS } from '../model/note-accident.model';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class NoteSelectorService {
     constructor() {}
@@ -18,8 +12,8 @@ export class NoteSelectorService {
         return {
             note: this.getRandomElement(NOTES),
             accident: this.getRandomElement(ACCIDENTS),
-            scale: this.getRandomElement(SCALES),
-            chord: this.getRandomElement(CHORDS)
+            mode: this.getRandomElement(MODES),
+            chord: this.getRandomElement(CHORDS),
         };
     }
 

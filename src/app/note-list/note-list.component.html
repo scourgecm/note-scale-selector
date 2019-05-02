@@ -21,20 +21,15 @@
                     >
                         <div>
                             <span class="h2-responsive">
-                                {{
-                                    noteSet.note +
-                                        (noteSet.accident !== 'natural'
-                                            ? noteSet.accident
-                                            : '')
-                                }}
+                                {{ noteSet.note }}<span [innerHTML]="noteSet.accident.symbol"></span>
                             </span>
                             <a class="float-right" (click)="deleteSet(i)">
                                 <mdb-icon far icon="trash-alt"></mdb-icon>
                             </a>
                         </div>
                         <p>
-                            <small>scale</small> {{ noteSet.scale }}
-                            <br>
+                            <small>mode</small> {{ noteSet.mode }}
+                            <br />
                             <small>chord</small> {{ noteSet.chord }}
                         </p>
                     </div>

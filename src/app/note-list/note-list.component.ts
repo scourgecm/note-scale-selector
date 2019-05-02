@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteKeeperService } from '../note-keeper.service';
+import { INoteSet } from '../model/note-set.model';
 
 @Component({
     selector: 'app-note-list',
     templateUrl: './note-list.component.html',
-    styleUrls: ['./note-list.component.scss']
+    styleUrls: ['./note-list.component.scss'],
 })
 export class NoteListComponent implements OnInit {
-    constructor(public keeperService: NoteKeeperService) { }
+    constructor(public keeperService: NoteKeeperService) {}
 
-    ngOnInit() { }
+    ngOnInit() {}
 
-    get noteSets() {
+    get noteSets(): INoteSet[] {
         return this.keeperService.savedSets;
     }
 
