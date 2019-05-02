@@ -1,7 +1,9 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6 ml-auto mr-auto">
-            <ng-template #noSets><p class="blue-grey-text">no sets saved yet</p></ng-template>
+            <ng-template #noSets
+                ><p class="blue-grey-text">no sets saved yet</p></ng-template
+            >
             <div *ngIf="noteSets.length > 0; else noSets">
                 <p class="h2-responsive">
                     saved chords
@@ -11,32 +13,29 @@
                         </a>
                     </small>
                 </p>
-                <table mdbTable>
-                    <tbody>
-                        <tr
-                            *ngFor="let noteSet of noteSets; let i = index"
-                            [attr.data-index]="i"
-                        >
-                            <td>
-                                {{
-                                    noteSet.note +
-                                        (noteSet.accident !== 'natural'
-                                            ? noteSet.accident
-                                            : '')
-                                }}
-                            </td>
-                            <td>
-                                <small>scale</small> {{ noteSet.scale }} |
-                                <small>chord</small> {{ noteSet.chord }}
-                            </td>
-                            <td>
-                                <a (click)="deleteSet(i)"
-                                    ><mdb-icon far icon="trash-alt"></mdb-icon>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="row">
+                    <div
+                        class="col-sm-2 col-md-3 col-lg-4"
+                        *ngFor="let noteSet of noteSets; let i = index"
+                        [attr.data-index]="i"
+                    >
+                        <p class="h3-responsive">
+                            {{
+                                noteSet.note +
+                                    (noteSet.accident !== 'natural'
+                                        ? noteSet.accident
+                                        : '')
+                            }}
+                            <a (click)="deleteSet(i)">
+                                <mdb-icon far icon="trash-alt"></mdb-icon>
+                            </a>
+                        </p>
+                        <p class="h4-responsive">
+                            <small>scale</small> {{ noteSet.scale }} |
+                            <small>chord</small> {{ noteSet.chord }}
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
