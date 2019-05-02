@@ -9,6 +9,7 @@ import {
 import { NoteSelectorService } from '../services/note-selector.service';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { NoteKeeperService } from '../note-keeper.service';
 
 @Component({
     selector: 'app-note-builder',
@@ -31,6 +32,7 @@ export class NoteBuilderComponent implements OnInit {
 
     constructor(
         private noteService: NoteSelectorService,
+        private keeperService: NoteKeeperService,
         private routeService: ActivatedRoute
     ) {}
 
@@ -44,5 +46,9 @@ export class NoteBuilderComponent implements OnInit {
 
     public randomize(): void {
         this.noteSet$.next(this.noteService.getRandomSet());
+    }
+
+    public saveCurrentSet(): void {
+        this.keeperService.saveSet(this.noteSet);
     }
 }

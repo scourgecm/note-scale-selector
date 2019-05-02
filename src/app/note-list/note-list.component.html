@@ -1,3 +1,22 @@
-<p>
-  note-list works!
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-lg-4">
+            <table mdbTable>
+                <thead>
+                    <tr>
+                        <th colspan="2">Saved chords</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let noteSet of keeperService.savedSets">
+                        <td>{{ noteSet.note + (noteSet.accident !== 'natural' ? noteSet.accident : '') }}</td>
+                        <td>
+                            <small>scale</small> {{ noteSet.scale }} |
+                            <small>chord</small> {{ noteSet.chord }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

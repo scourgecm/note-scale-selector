@@ -10,6 +10,6 @@ export class NoteKeeperService {
     constructor() {}
 
     public saveSet(noteSet: INoteSet): void {
-        this.savedSets.push(noteSet);
+        this.savedSets.push({ ...noteSet });
     }
 }
