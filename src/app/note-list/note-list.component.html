@@ -1,22 +1,43 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-lg-4">
-            <table mdbTable>
-                <thead>
-                    <tr>
-                        <th colspan="2">Saved chords</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let noteSet of keeperService.savedSets">
-                        <td>{{ noteSet.note + (noteSet.accident !== 'natural' ? noteSet.accident : '') }}</td>
-                        <td>
-                            <small>scale</small> {{ noteSet.scale }} |
-                            <small>chord</small> {{ noteSet.chord }}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="col-lg-6 ml-auto mr-auto">
+            <ng-template #noSets><p class="blue-grey-text">no sets saved yet</p></ng-template>
+            <div *ngIf="noteSets.length > 0; else noSets">
+                <p class="h2-responsive">
+                    saved chords
+                    <small>
+                        <a (click)="deleteAll()">
+                            <mdb-icon far icon="trash-alt"></mdb-icon>
+                        </a>
+                    </small>
+                </p>
+                <table mdbTable>
+                    <tbody>
+                        <tr
+                            *ngFor="let noteSet of noteSets; let i = index"
+                            [attr.data-index]="i"
+                        >
+                            <td>
+                                {{
+                                    noteSet.note +
+                                        (noteSet.accident !== 'natural'
+                                            ? noteSet.accident
+                                            : '')
+                                }}
+                            </td>
+                            <td>
+                                <small>scale</small> {{ noteSet.scale }} |
+                                <small>chord</small> {{ noteSet.chord }}
+                            </td>
+                            <td>
+                                <a (click)="deleteSet(i)"
+                                    ><mdb-icon far icon="trash-alt"></mdb-icon>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

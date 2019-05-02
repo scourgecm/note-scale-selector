@@ -1,8 +1,12 @@
 <div class="container">
-    <p class="h1-responsive">note scale selector</p>
+    <div class="row">
+        <div class="col-lg-6 mr-auto ml-auto">
+            <p class="h1-responsive">note scale selector</p>
+        </div>
+    </div>
     <form>
         <div class="row">
-            <div class="col-sm-6 col-md-3">
+            <div class="col-lg-3 col-sm-6 ml-auto">
                 <label>Root Note</label>
                 <select
                     class="browser-default custom-select mb-4"
@@ -14,7 +18,7 @@
                     }}</option>
                 </select>
             </div>
-            <div class="col-sm-6 col-md-3">
+            <div class="col-lg-3 col-sm-6 mr-auto">
                 <label>Accident</label>
                 <select
                     class="browser-default custom-select mb-4"
@@ -28,7 +32,9 @@
                     >
                 </select>
             </div>
-            <div class="col-sm-6 col-md-3">
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 ml-auto">
                 <label>Scale</label>
                 <select
                     class="browser-default custom-select mb-4"
@@ -40,7 +46,7 @@
                     }}</option>
                 </select>
             </div>
-            <div class="col-sm-6 col-md-3">
+            <div class="col-lg-3 col-sm-6 mr-auto">
                 <label>Chords</label>
                 <select
                     class="browser-default custom-select mb-4"
@@ -53,23 +59,27 @@
                 </select>
             </div>
         </div>
-        <button
-            mdbBtn
-            type="button"
-            color="default"
-            mdbWavesEffect
-            (click)="saveCurrentSet()"
-        >
-            save
-        </button>
-        <button
-            mdbBtn
-            type="button"
-            color="default"
-            mdbWavesEffect
-            (click)="randomize()"
-        >
-            randomize
-        </button>
+        <div class="row">
+            <div class="col-lg-6 mr-auto ml-auto">
+                <button
+                    mdbBtn
+                    type="button"
+                    color="default"
+                    mdbWavesEffect
+                    (click)="saveCurrentSet()"
+                >
+                    save
+                </button>
+                <button
+                    mdbBtn
+                    type="button"
+                    color="default"
+                    mdbWavesEffect
+                    (click)="randomize()"
+                >
+                    randomize
+                </button>
+            </div>
+        </div>
     </form>
 </div>
