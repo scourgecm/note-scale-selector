@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6 ml-auto mr-auto">
-            <ng-template #noSets
-                ><p class="blue-grey-text">no sets saved yet</p></ng-template
-            >
+            <ng-template #noSets>
+                <p class="blue-grey-text">no sets saved yet</p>
+            </ng-template>
             <div *ngIf="noteSets.length > 0; else noSets">
                 <p class="h2-responsive">
                     saved chords
@@ -15,23 +15,26 @@
                 </p>
                 <div class="row">
                     <div
-                        class="col-sm-2 col-md-3 col-lg-4"
+                        class="grid-cell col-sm-6 col-md-4 col-lg-3 p-2"
                         *ngFor="let noteSet of noteSets; let i = index"
                         [attr.data-index]="i"
                     >
-                        <p class="h3-responsive">
-                            {{
-                                noteSet.note +
-                                    (noteSet.accident !== 'natural'
-                                        ? noteSet.accident
-                                        : '')
-                            }}
-                            <a (click)="deleteSet(i)">
+                        <div>
+                            <span class="h2-responsive">
+                                {{
+                                    noteSet.note +
+                                        (noteSet.accident !== 'natural'
+                                            ? noteSet.accident
+                                            : '')
+                                }}
+                            </span>
+                            <a class="float-right" (click)="deleteSet(i)">
                                 <mdb-icon far icon="trash-alt"></mdb-icon>
                             </a>
-                        </p>
-                        <p class="h4-responsive">
-                            <small>scale</small> {{ noteSet.scale }} |
+                        </div>
+                        <p>
+                            <small>scale</small> {{ noteSet.scale }}
+                            <br>
                             <small>chord</small> {{ noteSet.chord }}
                         </p>
                     </div>

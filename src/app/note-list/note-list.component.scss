@@ -1,6 +1,7 @@
 @import "../../../node_modules/angular-bootstrap-md/scss/core/colors";
 
-.note-set {
+.grid-cell {
     color: $white-base;
     background-color: $default-color;
+    border: 1px white solid;
 }

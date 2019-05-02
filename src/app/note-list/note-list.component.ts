@@ -7,9 +7,9 @@ import { NoteKeeperService } from '../note-keeper.service';
     styleUrls: ['./note-list.component.scss']
 })
 export class NoteListComponent implements OnInit {
-    constructor(public keeperService: NoteKeeperService) {}
+    constructor(public keeperService: NoteKeeperService) { }
 
-    ngOnInit() {}
+    ngOnInit() { }
 
     get noteSets() {
         return this.keeperService.savedSets;
