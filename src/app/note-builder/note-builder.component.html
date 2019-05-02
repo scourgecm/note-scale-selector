@@ -29,7 +29,10 @@
                         *ngFor="let accident of accidents"
                         [ngValue]="accident"
                     >
-                        {{ accident.name }} (<span [innerHTML]="accident.symbol"></span>)
+                        {{ accident.name }} (<span
+                            [innerHTML]="accident.symbol"
+                        ></span
+                        >)
                     </option>
                 </select>
             </div>
@@ -42,9 +45,9 @@
                     name="mode"
                     [(ngModel)]="noteSet.mode"
                 >
-                    <option *ngFor="let mode of modes" [ngValue]="mode">{{
-                        mode
-                    }}</option>
+                    <option *ngFor="let mode of modes" [ngValue]="mode">
+                        {{ mode.name }}
+                    </option>
                 </select>
             </div>
             <div class="col-lg-3 col-sm-6 mr-auto">

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { INoteSet, NOTES, CHORDS, MODES } from '../model/note-set.model';
+import { INoteSet, NOTES, CHORDS } from '../model/note-set.model';
 import { ACCIDENTS } from '../model/note-accident.model';
+import { MODES } from '../model/note-mode.model';
 
 @Injectable({
     providedIn: 'root',

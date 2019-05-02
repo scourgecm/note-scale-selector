@@ -1,9 +1,10 @@
 import { IAccident } from './note-accident.model';
+import { IMode } from './note-mode.model';
 
 export interface INoteSet {
     note: string;
     accident: IAccident;
-    mode: string;
+    mode: IMode;
     chord: string;
 }
 
@@ -21,15 +22,6 @@ export const CHROMATIC: string[] = [
     'A',
     'A#/Bb',
     'B',
-];
-export const MODES: string[] = [
-    'ionian',
-    'dorian',
-    'phrygian',
-    'lydian',
-    'mixolydian',
-    'aeolian',
-    'locrian',
 ];
 export const CHORDS: string[] = [
     'maj',
