@@ -23,6 +23,7 @@ export class NoteSelectorService {
             chord,
         };
         noteSet.chromDegree = this.getNoteChromaticDegree(noteSet);
+        noteSet.name = noteSet.note + (accident.name !== 'natural' ? accident.symbol : '');
         return noteSet;
     }
 

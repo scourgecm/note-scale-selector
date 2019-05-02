@@ -24,13 +24,10 @@
                         [attr.data-index]="i"
                     >
                         <div>
-                            <span class="h2-responsive">
-                                {{ noteSet.note
-                                }}<span
-                                    *ngIf="noteSet.accident.name !== 'natural'"
-                                    [innerHTML]="noteSet.accident.symbol"
-                                >
-                                </span>
+                            <span
+                                class="h2-responsive"
+                                [innerHTML]="noteSet.name"
+                            >
                             </span>
                             <a
                                 class="float-right"
@@ -52,3 +49,6 @@
         </div>
     </div>
 </div>
+<pre>
+    {{noteSets | json}}
+</pre>
