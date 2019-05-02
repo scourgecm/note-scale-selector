@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { INoteSet, NOTES, CHORDS, CHROMATIC } from '../model/note-set.model';
-import { ACCIDENTS, IAccident } from '../model/note-accident.model';
+import { ACCIDENTS, IAccident, NATURAL } from '../model/note-accident.model';
 import { MODES, IMode } from '../model/note-mode.model';
-import { ValueTransformer } from '@angular/compiler/src/util';
 
 @Injectable({
     providedIn: 'root',
@@ -22,8 +21,9 @@ export class NoteSelectorService {
             mode,
             chord,
         };
-        noteSet.chromDegree = this.getNoteChromaticDegree(noteSet);
-        noteSet.name = noteSet.note + (accident.name !== 'natural' ? accident.symbol : '');
+        noteSet.chromDegree = this.getChromaticDegreeFromNote(noteSet);
+        noteSet.name =
+            noteSet.note + (accident.name !== 'natural' ? accident.symbol : '');
         return noteSet;
     }
 
@@ -36,7 +36,7 @@ export class NoteSelectorService {
         );
     }
 
-    public getNoteChromaticDegree(note: INoteSet): number {
+    public getChromaticDegreeFromNote(note: INoteSet): number {
         let index = CHROMATIC.findIndex((value: string) => {
             return value === note.note;
         });
@@ -49,6 +49,10 @@ export class NoteSelectorService {
         }
 
         return index;
+    }
+
+    public getNoteFromChromaticDegree(degree: number): INoteSet {
+        return { note: 'C', accident: ACCIDENTS[NATURAL] };
     }
 
     public getScale(rootDegree: number, offset: number): string[] {

@@ -5,8 +5,8 @@ export interface INoteSet {
     note: string;
     accident: IAccident;
     name?: string; // for [innerHTML]
-    mode: IMode;
-    chord: string;
+    mode?: IMode;
+    chord?: string;
     chromDegree?: number;
     scale?: string[];
 }
