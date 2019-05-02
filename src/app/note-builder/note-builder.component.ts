@@ -18,6 +18,7 @@ export class NoteBuilderComponent implements OnInit {
         accident: undefined,
         chord: undefined,
         mode: undefined,
+        chromDegree: undefined,
     });
     public noteSet: INoteSet;
 

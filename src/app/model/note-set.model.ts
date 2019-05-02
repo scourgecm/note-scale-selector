@@ -6,6 +6,7 @@ export interface INoteSet {
     accident: IAccident;
     mode: IMode;
     chord: string;
+    chromDegree: number;
 }
 
 export const NOTES: string[] = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
