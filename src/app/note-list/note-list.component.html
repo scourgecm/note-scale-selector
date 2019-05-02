@@ -6,9 +6,13 @@
             </ng-template>
             <div *ngIf="noteSets.length > 0; else noSets">
                 <p class="h2-responsive">
-                    saved chords
-                    <small>
-                        <a (click)="deleteAll()">
+                    saved sets
+                    <small class="float-right">
+                        <a
+                            (click)="deleteAll()"
+                            mdbTooltip="delete&nbsp;all&nbsp;sets"
+                            placement="top"
+                        >
                             <mdb-icon far icon="trash-alt"></mdb-icon>
                         </a>
                     </small>
@@ -21,9 +25,19 @@
                     >
                         <div>
                             <span class="h2-responsive">
-                                {{ noteSet.note }}<span [innerHTML]="noteSet.accident.symbol"></span>
+                                {{ noteSet.note
+                                }}<span
+                                    *ngIf="noteSet.accident.name !== 'natural'"
+                                    [innerHTML]="noteSet.accident.symbol"
+                                >
+                                </span>
                             </span>
-                            <a class="float-right" (click)="deleteSet(i)">
+                            <a
+                                class="float-right"
+                                (click)="deleteSet(i)"
+                                mdbTooltip="delete&nbsp;set"
+                                placement="top"
+                            >
                                 <mdb-icon far icon="trash-alt"></mdb-icon>
                             </a>
                         </div>

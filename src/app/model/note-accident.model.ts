@@ -5,7 +5,7 @@ export interface IAccident {
 }
 
 export const ACCIDENTS: IAccident[] = [
-    { id: 1, name: 'Flat', symbol: '&#9837;' },
-    { id: 2, name: 'Natural', symbol: '&#9838;' },
-    { id: 3, name: 'Sharp', symbol: '&#9839;' },
+    { id: 1, name: 'flat', symbol: '&#9837;' },
+    { id: 2, name: 'natural', symbol: '&#9838;' },
+    { id: 3, name: 'sharp', symbol: '&#9839;' },
 ];

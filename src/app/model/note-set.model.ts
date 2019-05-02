@@ -8,7 +8,7 @@ export interface INoteSet {
 }
 
 export const NOTES: string[] = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
-export const MODES: string[] = ['Ionian', 'Dorian', 'Phrygian', 'Lydian', 'Mixolydian', 'Aeolian', 'Locrian'];
+export const MODES: string[] = ['ionian', 'dorian', 'phrygian', 'lydian', 'mixolydian', 'aeolian', 'locrian'];
 export const CHORDS: string[] = [
     'maj',
     'min',
