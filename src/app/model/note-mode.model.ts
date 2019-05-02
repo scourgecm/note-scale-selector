@@ -12,3 +12,5 @@ export const MODES: IMode[] = [
     { name: 'aeolian', offset: 5 },
     { name: 'locrian', offset: 6 },
 ];
+
+export const MAJOR_PATTERN: number[] = [2, 2, 1, 2, 2, 2, 1];
