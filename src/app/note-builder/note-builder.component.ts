@@ -4,7 +4,7 @@ import { NoteSelectorService } from '../services/note-selector.service';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { NoteKeeperService } from '../note-keeper.service';
-import { IAccident, ACCIDENTS } from '../model/note-accident.model';
+import { Accident, ACCIDENTS } from '../model/note-accident.model';
 import { IMode, MODES } from '../model/note-mode.model';
 
 @Component({
@@ -22,7 +22,7 @@ export class NoteBuilderComponent implements OnInit {
     public noteSet: INoteSet;
 
     public notes: string[] = NOTES;
-    public accidents: IAccident[] = ACCIDENTS;
+    public accidents: Accident[] = ACCIDENTS;
     public modes: IMode[] = MODES;
     public chords: string[] = CHORDS;
 

@@ -1,31 +1,14 @@
-export interface IAccident {
-    id: number;
-    name: string;
-    symbol: string;
-    value: number;
+export class Accident {
+    constructor(
+        public id: number,
+        public name: string,
+        public symbol: string,
+        public value: number
+    ) {}
 }
 
-export const FLAT = 0;
-export const NATURAL = 1;
-export const SHARP = 2;
+export const NATURAL = new Accident(0, 'flat', '&#9837;', -1);
+export const FLAT = new Accident(1, 'natural', '&#9838;', 0);
+export const SHARP = new Accident(2, 'sharp', '&#9839;', 1);
 
-export const ACCIDENTS: IAccident[] = [];
-
-ACCIDENTS[FLAT] = {
-    id: 1,
-    name: 'flat',
-    symbol: '&#9837;',
-    value: -1,
-};
-ACCIDENTS[NATURAL] = {
-    id: 2,
-    name: 'natural',
-    symbol: '&#9838;',
-    value: 0,
-};
-ACCIDENTS[SHARP] = {
-    id: 3,
-    name: 'sharp',
-    symbol: '&#9839;',
-    value: 1,
-};
+export const ACCIDENTS: Accident[] = [FLAT, NATURAL, SHARP];

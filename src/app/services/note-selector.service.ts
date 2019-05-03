@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { INoteSet, NOTES, CHORDS, CHROMATIC } from '../model/note-set.model';
-import { ACCIDENTS, IAccident, NATURAL } from '../model/note-accident.model';
+import { ACCIDENTS, Accident, NATURAL } from '../model/note-accident.model';
 import { MODES, IMode } from '../model/note-mode.model';
 
 @Injectable({
-    providedIn: 'root',
+    providedIn: 'root'
 })
 export class NoteSelectorService {
     constructor() {}
 
     public buildSet(
         note: string,
-        accident: IAccident,
+        accident: Accident,
         mode: IMode,
-        chord: string,
+        chord: string
     ): INoteSet {
         const noteSet: INoteSet = {
             note,
             accident,
             mode,
-            chord,
+            chord
         };
         noteSet.chromDegree = this.getChromaticDegreeFromNote(noteSet);
         noteSet.name =
@@ -32,7 +32,7 @@ export class NoteSelectorService {
             this.getRandomElement(NOTES),
             this.getRandomElement(ACCIDENTS),
             this.getRandomElement(MODES),
-            this.getRandomElement(CHORDS),
+            this.getRandomElement(CHORDS)
         );
     }
 
@@ -52,7 +52,7 @@ export class NoteSelectorService {
     }
 
     public getNoteFromChromaticDegree(degree: number): INoteSet {
-        return { note: 'C', accident: ACCIDENTS[NATURAL] };
+        return { note: 'C', accident: NATURAL };
     }
 
     public getScale(rootDegree: number, offset: number): string[] {

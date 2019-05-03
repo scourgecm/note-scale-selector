@@ -1,9 +1,9 @@
-import { IAccident } from './note-accident.model';
+import { Accident, FLAT, SHARP } from './note-accident.model';
 import { IMode } from './note-mode.model';
 
 export interface INoteSet {
     note: string;
-    accident: IAccident;
+    accident: Accident;
     name?: string; // for [innerHTML]
     mode?: IMode;
     chord?: string;
@@ -12,19 +12,22 @@ export interface INoteSet {
 }
 
 export const NOTES: string[] = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+
+const flatSym = FLAT.symbol;
+const sharpSym = SHARP.symbol;
 export const CHROMATIC: string[] = [
-    'C',
-    'C#/Db',
-    'D',
-    'D#/Db',
-    'E',
-    'F',
-    'F#/Gb',
-    'G',
-    'G#/Ab',
-    'A',
-    'A#/Bb',
-    'B',
+    `C`,
+    `C${sharpSym}/D${flatSym}`,
+    `D`,
+    `D${sharpSym}/E${flatSym}`,
+    `E`,
+    `F`,
+    `F${sharpSym}/G${flatSym}`,
+    `G`,
+    `G${sharpSym}/A${flatSym}`,
+    `A`,
+    `A${sharpSym}/B${flatSym}`,
+    `B`
 ];
 export const CHORDS: string[] = [
     'maj',
@@ -39,5 +42,5 @@ export const CHORDS: string[] = [
     'o',
     'o7',
     'min7b5',
-    '+',
+    '+'
 ];
